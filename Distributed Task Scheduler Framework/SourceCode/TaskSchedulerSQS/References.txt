@@ -1,0 +1,2 @@
+AWS website is refered to use the AWS Java API.
+AWS Java API is used to implement the code to create and use SQS and Dynamo DB table

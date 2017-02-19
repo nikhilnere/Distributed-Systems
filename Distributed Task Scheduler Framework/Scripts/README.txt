@@ -1,0 +1,2 @@
+This script folder just shows all the scripts used in the program.
+To run the scripts please go the SourceCode folder where you will find the same scripts. And run them as mentioned in the manual which can be found in the report documents

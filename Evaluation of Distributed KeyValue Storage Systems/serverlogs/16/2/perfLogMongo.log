@@ -1,0 +1,27 @@
+Nov 28, 2015 7:32:21 AM com.assign.perftest.MongoDBPerfTest testPut
+INFO: Put test started
+
+Nov 28, 2015 7:32:21 AM com.assign.perftest.MongoDBPerfTest testPut
+INFO: Wait for the result...
+
+Nov 28, 2015 7:35:49 AM com.assign.perftest.MongoDBPerfTest testPut
+INFO: Time taken for 10000 puts : 208134 ms
+
+Nov 28, 2015 7:35:49 AM com.assign.perftest.MongoDBPerfTest testGet
+INFO: Get test started
+
+Nov 28, 2015 7:35:49 AM com.assign.perftest.MongoDBPerfTest testGet
+INFO: Wait for the result...
+
+Nov 28, 2015 7:40:09 AM com.assign.perftest.MongoDBPerfTest testGet
+INFO: Time taken for 10000 get requests : 259455 ms
+
+Nov 28, 2015 7:40:09 AM com.assign.perftest.MongoDBPerfTest testRemove
+INFO: Get test started
+
+Nov 28, 2015 7:40:09 AM com.assign.perftest.MongoDBPerfTest testRemove
+INFO: Wait for the result...
+
+Nov 28, 2015 7:44:52 AM com.assign.perftest.MongoDBPerfTest testRemove
+INFO: Time taken for 10000 delete requests : 283345 ms
+

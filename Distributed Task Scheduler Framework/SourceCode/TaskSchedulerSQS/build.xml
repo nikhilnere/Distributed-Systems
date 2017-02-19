@@ -1,0 +1,112 @@
+<project>
+
+    <target name="clean">
+        <delete dir="build"/>
+        <delete dir="output"/>
+
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes">
+		<classpath>
+			<pathelement path="lib/aspectjrt-1.8.2.jar"/>
+			<pathelement path="lib/aspectjweaver.jar"/>
+			<pathelement path="lib/aws-java-sdk-1.10.73.jar"/>
+			<pathelement path="lib/aws-java-sdk-flow-build-tools-1.10.73.jar"/>
+			<pathelement path="lib/commons-codec-1.6.jar"/>
+			<pathelement path="lib/commons-logging-1.1.3.jar"/>
+			<pathelement path="lib/freemarker-2.3.9.jar"/>
+			<pathelement path="lib/httpclient-4.3.6.jar"/>
+			<pathelement path="lib/httpcore-4.3.3.jar"/>
+			<pathelement path="lib/jackson-annotations-2.5.0.jar"/>
+			<pathelement path="lib/jackson-core-2.5.3.jar"/>
+			<pathelement path="lib/jackson-databind-2.5.3.jar"/>
+			<pathelement path="lib/jackson-dataformat-cbor-2.5.3.jar"/>
+			<pathelement path="lib/javax.mail-api-1.4.6.jar"/>
+			<pathelement path="lib/joda-time-2.8.1.jar"/>
+			<pathelement path="lib/spring-beans-3.0.7.RELEASE.jar"/>
+			<pathelement path="lib/spring-context-3.0.7.RELEASE.jar"/>
+			<pathelement path="lib/spring-core-3.0.7.RELEASE.jar"/>
+			<pathelement path="lib/spring-test-3.0.7.RELEASE.jar"/>
+		</classpath>
+	</javac>
+    </target>
+
+    <target name="jarworker" depends="compile">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/TaskWorker.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="com.assign3.TaskWorker"/>
+            </manifest>
+	    <fileset dir="build/classes"/>	
+		<zipfileset excludes="META-INF/*.SF" src="lib/aspectjrt-1.8.2.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/aspectjweaver.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/aws-java-sdk-1.10.73.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/aws-java-sdk-flow-build-tools-1.10.73.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/commons-codec-1.6.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/commons-logging-1.1.3.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/freemarker-2.3.9.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/httpclient-4.3.6.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/httpcore-4.3.3.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/jackson-annotations-2.5.0.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/jackson-core-2.5.3.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/jackson-databind-2.5.3.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/jackson-dataformat-cbor-2.5.3.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/javax.mail-api-1.4.6.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/joda-time-2.8.1.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/spring-beans-3.0.7.RELEASE.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/spring-context-3.0.7.RELEASE.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/spring-core-3.0.7.RELEASE.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/spring-test-3.0.7.RELEASE.jar"/>			
+        </jar>
+    </target>
+
+    <target name="runworker" depends="jarworker">
+        <java jar="build/jar/TaskWorker.jar" fork="true">
+			<arg value="${inputQ}"/>
+			<arg value="${outputQ}"/>
+			<arg value="${t}"/>
+		</java>
+		
+    </target>
+	
+	
+	 <target name="jarclient" depends="compile">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/TaskSchedulerClient.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="com.assign3.TaskSchedulerClient"/>
+            </manifest>
+	    <fileset dir="build/classes"/>	
+		<zipfileset excludes="META-INF/*.SF" src="lib/aspectjrt-1.8.2.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/aspectjweaver.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/aws-java-sdk-1.10.73.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/aws-java-sdk-flow-build-tools-1.10.73.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/commons-codec-1.6.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/commons-logging-1.1.3.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/freemarker-2.3.9.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/httpclient-4.3.6.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/httpcore-4.3.3.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/jackson-annotations-2.5.0.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/jackson-core-2.5.3.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/jackson-databind-2.5.3.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/jackson-dataformat-cbor-2.5.3.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/javax.mail-api-1.4.6.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/joda-time-2.8.1.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/spring-beans-3.0.7.RELEASE.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/spring-context-3.0.7.RELEASE.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/spring-core-3.0.7.RELEASE.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="lib/spring-test-3.0.7.RELEASE.jar"/>			
+        </jar>
+    </target>
+
+    <target name="runclient" depends="jarclient">
+        <java jar="build/jar/TaskSchedulerClient.jar" fork="true">
+			<arg value="${inputQ}"/>
+			<arg value="${outputQ}"/>
+			<arg value="${w}"/>
+		</java>
+    </target>
+	
+</project>

@@ -1,0 +1,27 @@
+Nov 29, 2015 2:49:44 AM com.assign.perftest.RedisPerfTest testPut
+INFO: Put test started
+
+Nov 29, 2015 2:49:44 AM com.assign.perftest.RedisPerfTest testPut
+INFO: Wait for the result...
+
+Nov 29, 2015 2:49:49 AM com.assign.perftest.RedisPerfTest testPut
+INFO: Time taken for 10000 puts : 4483 ms
+
+Nov 29, 2015 2:49:49 AM com.assign.perftest.RedisPerfTest testGet
+INFO: Get test started
+
+Nov 29, 2015 2:49:49 AM com.assign.perftest.RedisPerfTest testGet
+INFO: Wait for the result...
+
+Nov 29, 2015 2:49:53 AM com.assign.perftest.RedisPerfTest testGet
+INFO: Time taken for 10000 get requests : 3920 ms
+
+Nov 29, 2015 2:49:53 AM com.assign.perftest.RedisPerfTest testRemove
+INFO: Get test started
+
+Nov 29, 2015 2:49:53 AM com.assign.perftest.RedisPerfTest testRemove
+INFO: Wait for the result...
+
+Nov 29, 2015 2:49:57 AM com.assign.perftest.RedisPerfTest testRemove
+INFO: Time taken for 10000 delete requests : 4396 ms
+

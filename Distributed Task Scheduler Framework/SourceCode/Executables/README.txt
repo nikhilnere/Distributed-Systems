@@ -1,0 +1,1 @@
+The folder has the executables. Please do not use these executables to run the appliaction because these jars contain my AWS access key and secret key which I will be deactiviating so the applilcation will not run properly. Please follow the instructions given in the manual which can be found in report to run the application

@@ -1,0 +1,35 @@
+1) Copy installation script Installation.sh ->
+	scp -i nikhilnere.pem /home/nikhil/AOS/Assignment4/Installation.sh ubuntu@54.165.129.64:/home/ubuntu
+
+2) Run script on the instance
+	ssh -i nikhilnere.pem ubuntu@54.86.106.108
+	chmod +x Installation.sh
+	./Installation.sh
+	sudo su
+	cd /etc/
+	vi mongodb.conf
+	sudo service mongodb stop
+	sudo service mongodb start
+
+	cd /etc/couchdb/
+	sudo vi default.ini
+	make bind id 0.0.0.0
+	sudo service couchdb stop
+	sudo service couchdb start
+
+3) Make image of the instance
+
+4) Create 16 instances
+
+5) Update the config file with the ip addresses of the instances
+
+6) Make host.txt file
+
+7) Run command to add the key file
+	ssh-add nikhilnere.pem
+
+7) Copy run scripts and source code parallely on all instances
+	./CopyAndRun.sh
+
+8) Run Tests
+	./executeTest.sh

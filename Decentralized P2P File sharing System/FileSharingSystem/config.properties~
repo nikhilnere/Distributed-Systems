@@ -1,0 +1,50 @@
+##config.properties
+##This file holds the environment specific properties
+
+##Server details
+server.ip.0=192.168.1.113
+server.ip.1=192.168.1.113
+server.ip.2=192.168.1.113
+server.ip.3=192.168.1.113
+server.ip.4=192.168.1.113
+server.ip.5=192.168.1.113
+server.ip.6=192.168.1.113
+server.ip.7=192.168.1.113
+
+server.port.0=9991
+server.port.1=9992
+server.port.2=9993
+server.port.3=9994
+server.port.4=9995
+server.port.5=9996
+server.port.6=9997
+server.port.7=9998
+
+downloader.port.0=9981
+downloader.port.1=9982
+downloader.port.2=9983
+downloader.port.3=9984
+downloader.port.4=9985
+downloader.port.5=9986
+downloader.port.6=9987
+downloader.port.7=9988
+
+##client port number where the client will keep listening
+##acting as server 0 in above details
+client.port=9991
+
+##The file sender listens on this port
+sender.port=9981
+
+##decides how many replicas to make
+replication.factor=2
+
+##decides the number of servers
+number.of.servers=8
+
+##Directory where the files are kept for sharing with other peers
+##NOTE : Escape backslashes in original string
+peer.share.fileDir=/home/nikhil/AOS/Assignment_2/peer1/share/
+
+##Directory where the files will be downloaded
+peer.download.fileDir=/home/nikhil/AOS/Assignment_2/peer1/downloads/

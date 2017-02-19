@@ -1,0 +1,27 @@
+Nov 29, 2015 5:10:14 PM com.assign.perftest.CouchDBPerfTest testPut
+INFO: Put test started
+
+Nov 29, 2015 5:10:14 PM com.assign.perftest.CouchDBPerfTest testPut
+INFO: Wait for the result...
+
+Nov 29, 2015 5:11:30 PM com.assign.perftest.CouchDBPerfTest testPut
+INFO: Time taken for 10000 puts : 76086 ms
+
+Nov 29, 2015 5:11:30 PM com.assign.perftest.CouchDBPerfTest testGet
+INFO: Get test started
+
+Nov 29, 2015 5:11:30 PM com.assign.perftest.CouchDBPerfTest testGet
+INFO: Wait for the result...
+
+Nov 29, 2015 5:12:37 PM com.assign.perftest.CouchDBPerfTest testGet
+INFO: Time taken for 10000 get requests : 66716 ms
+
+Nov 29, 2015 5:12:37 PM com.assign.perftest.CouchDBPerfTest testRemove
+INFO: Get test started
+
+Nov 29, 2015 5:12:37 PM com.assign.perftest.CouchDBPerfTest testRemove
+INFO: Wait for the result...
+
+Nov 29, 2015 5:20:04 PM com.assign.perftest.CouchDBPerfTest testRemove
+INFO: Time taken for 10000 delete requests : 447111 ms
+
